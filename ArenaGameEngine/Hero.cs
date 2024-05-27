@@ -44,11 +44,11 @@ namespace ArenaGameEngine
 
             double coef = random.Next(80, 120 + 1);
             double defendStrenght = (Armor + Weapon.BlockPower) * (coef / 100);
-            double damageReveived = damage - defendStrenght;
-            if (damageReveived < 0)
-                damageReveived = 0;
-            Health -= damageReveived;
-            return damageReveived;
+            double damageReceived = damage - defendStrenght;
+            if (damageReceived < 0)
+                damageReceived = 0;
+            Health -= damageReceived;
+            return damageReceived;
         }
     }
 }

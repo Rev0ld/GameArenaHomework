@@ -19,7 +19,7 @@ namespace ArenaGameEngine.Heroes
         }
 
         public override double Attack() {
-             return (Strenght + Weapon.AttackDamage)*0.8;
+             return (Strenght + Weapon.AttackDamage)*0.6;
         }
 
         public override double Defend(double damage) {
@@ -35,6 +35,8 @@ namespace ArenaGameEngine.Heroes
                 Armor = ArmorValue;
                 hitCount = 0;
             }
+            if (damageReceived < 0)
+                damageReceived = 0;
             Health -= damageReceived;
             return damageReceived;
         }
