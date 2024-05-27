@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/ArenaGameEngine/Heroes/Heavy.cs
+/ArenaGameEngine/Heroes/Protector.cs
+/ArenaGameEngine/Heroes/Heavy.cs
