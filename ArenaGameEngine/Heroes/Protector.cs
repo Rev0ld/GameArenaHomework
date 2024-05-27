@@ -37,7 +37,6 @@ namespace ArenaGameEngine.Heroes
             }
             Health -= damageReceived;
             return damageReceived;
-
         }
     }
 }
