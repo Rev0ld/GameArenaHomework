@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ArenaGameEngine
 {
-    internal class IWeapon
+    public interface IWeapon
     {
+        public string Name { get; set; }
+
+        public double AttackDamage { get;}
+
+        public double BlockPower { get;}
     }
 }

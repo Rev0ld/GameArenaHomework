@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ArenaGameEngine
 {
-    internal class IHero
+    public interface IHero
     {
+        double Attack();
+
+        double Defend(double damage);
     }
 }
