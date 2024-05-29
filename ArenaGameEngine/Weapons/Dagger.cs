@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArenaGameEngine.Weapons
 {
-    public class Dagger : IWeapon
+    public class Dagger : Weapon
     {
         public string Name { get; set; }
 

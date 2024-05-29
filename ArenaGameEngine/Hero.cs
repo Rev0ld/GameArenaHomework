@@ -13,7 +13,7 @@ namespace ArenaGameEngine
         public double Health { get; set; }
         public double Armor { get; set; }
         public double Strenght { get; set; }
-        public IWeapon Weapon { get; private set; }
+        public Weapon Weapon { get; private set; }
 
         public bool IsAlive
         {
@@ -22,7 +22,7 @@ namespace ArenaGameEngine
                 return Health > 0;
             }
         }
-        public Hero(string name, double armor, double strenght, IWeapon weapon)
+        public Hero(string name, double armor, double strenght, Weapon weapon)
         {
             Health = 100;
 

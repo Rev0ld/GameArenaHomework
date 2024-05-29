@@ -11,7 +11,7 @@ namespace ArenaGameEngine.Heroes
 
         public int hitCount { get; private set; }
         public double ArmorValue { get; set; }
-        public Protector(string name, double armor, double strenght, IWeapon weapon) 
+        public Protector(string name, double armor, double strenght, Weapon weapon) 
             : base(name, armor, strenght, weapon)
         {
             hitCount = 0;

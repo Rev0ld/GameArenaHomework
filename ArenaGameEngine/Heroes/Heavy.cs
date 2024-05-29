@@ -10,7 +10,7 @@ namespace ArenaGameEngine.Heroes
     {
         public double BaseHealth { get; set; }
         public int bleedTick { get; set; }
-        public Heavy(string name,double health, double armor, double strenght, IWeapon weapon) 
+        public Heavy(string name,double health, double armor, double strenght, Weapon weapon) 
             : base(name, armor, strenght, weapon)
         {
             Health = health;

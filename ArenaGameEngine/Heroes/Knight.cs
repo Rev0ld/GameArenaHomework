@@ -10,7 +10,7 @@ namespace ArenaGameEngine.Heroes
     {
         private double hitCount;
         private double damageCoef;
-        public Knight(string name, double armor, double strenght, IWeapon weapon) : base(name, armor, strenght, weapon)
+        public Knight(string name, double armor, double strenght, Weapon weapon) : base(name, armor, strenght, weapon)
         {
             hitCount = 0;
             damageCoef = 0.6;

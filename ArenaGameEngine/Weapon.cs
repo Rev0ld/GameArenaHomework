@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArenaGameEngine
 {
-    public interface IWeapon
+    public abstract class Weapon
     {
         public string Name { get; set; }
 
