@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArenaGameEngine", "ArenaGameEngine\ArenaGameEngine.csproj", "{BDFC539A-A2D3-4E0B-BBCD-57D59FBF0035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArenaGameEngine", "ArenaGameEngine\ArenaGameEngine.csproj", "{BDFC539A-A2D3-4E0B-BBCD-57D59FBF0035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArenaGameConsoleApp", "ArenaGameConsoleApp\ArenaGameConsoleApp.csproj", "{D1E315A9-50AA-41F3-85FE-E63BEF769533}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BDFC539A-A2D3-4E0B-BBCD-57D59FBF0035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDFC539A-A2D3-4E0B-BBCD-57D59FBF0035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDFC539A-A2D3-4E0B-BBCD-57D59FBF0035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E315A9-50AA-41F3-85FE-E63BEF769533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E315A9-50AA-41F3-85FE-E63BEF769533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E315A9-50AA-41F3-85FE-E63BEF769533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E315A9-50AA-41F3-85FE-E63BEF769533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

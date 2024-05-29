@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ArenaGameEngine.BaseClasses.Weapons;
 
-namespace ArenaGameEngine
+namespace ArenaGameEngine.BaseClasses.Heroes
 {
     public abstract class Hero : IHero
     {
@@ -32,7 +33,8 @@ namespace ArenaGameEngine
             Weapon = weapon;
         }
 
-        public virtual double Attack() {
+        public virtual double Attack()
+        {
 
             double totalStrenght = Strenght + Weapon.AttackDamage;
             double coef = random.Next(80, 120 + 1);
@@ -40,7 +42,8 @@ namespace ArenaGameEngine
 
             return finalAttack;
         }
-        public virtual double Defend(double damage) {
+        public virtual double Defend(double damage)
+        {
 
             double coef = random.Next(80, 120 + 1);
             double defendStrenght = (Armor + Weapon.BlockPower) * (coef / 100);
@@ -50,5 +53,12 @@ namespace ArenaGameEngine
             Health -= damageReceived;
             return damageReceived;
         }
+
+        public override string ToString() {
+
+            return $"{Name} with health {Math.Round(Health, 2)}";
+        }
+            
+        
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ArenaGameEngine
 {
-    public interface IHero
-    {
-        double Attack();
+    public struct ReturnInfo {
+        public string ActionInfo;
 
-        double Defend(double damage);
+        public double Value;
+
     }
 }

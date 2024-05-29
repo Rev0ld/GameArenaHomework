@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ArenaGameEngine.BaseClasses.Heroes;
+using ArenaGameEngine.BaseClasses.Weapons;
 
 namespace ArenaGameEngine.Heroes
 {
@@ -18,7 +20,27 @@ namespace ArenaGameEngine.Heroes
 
         public override double Attack()
         {
-            double damage = base.Attack();
+            double damage = 0;
+            Weapon weaponTest = Weapon;
+            ReturnInfo weaponInfo = weaponTest.UseAbility();
+            switch (weaponInfo.ActionInfo)
+            {
+                case "Attack":
+                    damage = base.Attack() + weaponInfo.Value;
+                    break;
+                case "Heal":
+                    double probability = random.NextDouble();
+                    damage = base.Attack();
+                    Health += weaponInfo.Value*probability;
+                    break;
+                case "Armor":
+                    damage = base.Attack();
+                    Armor += weaponInfo.Value;
+                    break;
+                default:
+                    damage = base.Attack();
+                    break;
+            }
             double realDamage = damage * damageCoef;
             if (damageCoef < 1) damageCoef += 0.1;
             return realDamage;
