@@ -1,18 +1,17 @@
 ﻿using ArenaGameEngine;
 using ArenaGameEngine.Heroes;
 using ArenaGameEngine.Weapons;
+using ArenaGameEngine.WeaponAbilities;
+using System;
+using ArenaGameEngine.BaseClasses.Heroes;
+using ArenaGameEngine.BaseClasses.Weapons;
+using ArenaGameEngine.WeaponClasses;
 
 
 namespace ArenaGameConsoleApp
 {
     internal class Program
     {
-        static ReturnInfo SwordAbility() { 
-            ReturnInfo retunable = new ReturnInfo();
-            retunable.Value = 100;
-            retunable.ActionInfo = "Heal";
-            return retunable;
-        }
 
         static void ConsoleNotification(GameEngineRunner.NotificationArgs args){
             Console.WriteLine($"{args.Attacker.Name} attacked {args.Defender.Name} " +
@@ -21,10 +20,32 @@ namespace ArenaGameConsoleApp
         }
         static void Main(string[] args)
         {
+            Weapon swordHeal = new Sword("Sword-Heal", 10, 10, Abilities.SwordAbilityHeal);
+            Weapon swordAttack = new Sword("Sword-Attack", 10, 10, Abilities.SwordAbilityAttack);
+            Weapon swordArmor = new Sword("Sword-Armor", 10, 10, Abilities.SwordAbilityArmor);
+
+            Weapon dagger = new Dagger("Dagger", 20, 5, Abilities.SwordAbilityAttack);
+
+            Weapon axe = new Axe("Axe", 30, 10, Abilities.AxeAbilityAttack);
+
+            Weapon bow = new Bow("Bow", 20, 0, Abilities.BowAbilityArmor);
+
+            Weapon fists = new Fists("Fists", 10, 5, Abilities.FistAbilityHeal);
+
+            Hero assasinRed = new Assassin("AssasinRed", 10, 20, dagger);
+            Hero heavyRed = new Heavy("HeavyRed", 200, 20, 10, axe);
+            Hero knightRed = new Knight("KnightRed", 10, 20, swordArmor);
+            Hero protectorRed = new Protector("ProtectorRed", 10, 20, bow);
+            Hero assasinBlue = new Assassin("AssasinBlue", 10, 20, dagger);
+            Hero heavyBlue = new Heavy("HeavyBlue", 200, 20, 10, axe);
+            Hero knightBlue = new Knight("KnightBlue", 10, 20, swordArmor);
+            Hero protectorBlue = new Protector("AssasinBlue", 10, 20, bow);
+
+
             GameEngineRunner game = new GameEngineRunner()
             {
-                HeroA = new Knight("Knight-1 ", 10, 20, new Sword("Sword", 1, 1,SwordAbility)),
-                HeroB = new Knight("Knight-2 ", 10, 20, new Sword("Sword", 1, 1,SwordAbility)),
+                HeroA = protectorRed,
+                HeroB = heavyBlue,
                 NotificationsCallBack = ConsoleNotification
             };
 

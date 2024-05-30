@@ -26,14 +26,38 @@ namespace ArenaGameEngine.Heroes
             {
                 bleedTick++;
                 Health = Health - Health * 0.05;
-                return (Strenght + Weapon.AttackDamage) * 0.8;
+                double damage = 0;
+                Weapon weaponWield = Weapon;
+                ReturnInfo weaponInfo = weaponWield.UseAbility();
+                switch (weaponInfo.ActionInfo)
+                {
+                    case "Attack":
+                        damage = base.Attack() + weaponInfo.Value;
+                        break;
+                    case "Heal":
+                        damage = base.Attack();
+                        Health += weaponInfo.Value;
+                        break;
+                    case "Armor":
+                        damage = base.Attack();
+                        Armor += weaponInfo.Value;
+                        break;
+                    default:
+                        damage = base.Attack();
+                        break;
+                }
+                double realDamage = damage;
+                return realDamage;
             }
             else {
                 bleedTick = 0;
                 Health = Health + BaseHealth * 0.2;
                 return 0;
             }
+            /*
             
+            */
+
         }
         public override double Defend(double damage)
         {

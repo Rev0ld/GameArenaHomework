@@ -11,7 +11,7 @@ namespace ArenaGameEngine.Weapons
     {
 
         public Sword(string name, double attackDamage, double blockPower, SpecialAbility specialAbility) 
-            : base(name, 20, 10, specialAbility)
+            : base(name, attackDamage, blockPower, specialAbility)
         {
 
         }

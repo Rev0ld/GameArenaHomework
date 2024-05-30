@@ -21,7 +21,28 @@ namespace ArenaGameEngine.Heroes
         }
 
         public override double Attack() {
-             return (Strenght + Weapon.AttackDamage)*0.6;
+            double damage = 0;
+            Weapon weaponWield = Weapon;
+            ReturnInfo weaponInfo = weaponWield.UseAbility();
+            switch (weaponInfo.ActionInfo)
+            {
+                case "Attack":
+                    damage = base.Attack() + weaponInfo.Value;
+                    break;
+                case "Heal":
+                    damage = base.Attack();
+                    Health += weaponInfo.Value;
+                    break;
+                case "Armor":
+                    damage = base.Attack();
+                    Armor += weaponInfo.Value;
+                    break;
+                default:
+                    damage = base.Attack();
+                    break;
+            }
+            double realDamage = damage;
+            return realDamage;
         }
 
         public override double Defend(double damage) {

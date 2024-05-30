@@ -21,8 +21,8 @@ namespace ArenaGameEngine.Heroes
         public override double Attack()
         {
             double damage = 0;
-            Weapon weaponTest = Weapon;
-            ReturnInfo weaponInfo = weaponTest.UseAbility();
+            Weapon weaponWield = Weapon;
+            ReturnInfo weaponInfo = weaponWield.UseAbility();
             switch (weaponInfo.ActionInfo)
             {
                 case "Attack":

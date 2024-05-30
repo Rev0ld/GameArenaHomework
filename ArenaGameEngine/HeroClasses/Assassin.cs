@@ -17,14 +17,28 @@ namespace ArenaGameEngine.Heroes
 
         public override double Attack()
         {
-            double damage = base.Attack();
-
-            double probability = random.NextDouble();
-            if (probability < 0.10)
+            double damage = 0;
+            Weapon weaponWield = Weapon;
+            ReturnInfo weaponInfo = weaponWield.UseAbility();
+            switch (weaponInfo.ActionInfo)
             {
-                damage *= 3;
+                case "Attack":
+                    damage = base.Attack() + weaponInfo.Value;
+                    break;
+                case "Heal":
+                    damage = base.Attack();
+                    Health += weaponInfo.Value;
+                    break;
+                case "Armor":
+                    damage = base.Attack();
+                    Armor += weaponInfo.Value;
+                    break;
+                default:
+                    damage = base.Attack();
+                    break;
             }
-            return damage;
+            double realDamage = damage;
+            return realDamage;
         }
     }
 }

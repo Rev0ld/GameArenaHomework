@@ -10,7 +10,7 @@ namespace ArenaGameEngine.Weapons
     public class Dagger : Weapon
     {
         public Dagger(string name, double attackDamage, double blockPower, SpecialAbility specialAbility) 
-            : base(name, 20, 1, specialAbility)
+            : base(name, attackDamage, blockPower, specialAbility)
         {
 
         }
