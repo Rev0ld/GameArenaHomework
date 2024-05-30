@@ -29,9 +29,8 @@ namespace ArenaGameEngine.Heroes
                     damage = base.Attack() + weaponInfo.Value;
                     break;
                 case "Heal":
-                    double probability = random.NextDouble();
                     damage = base.Attack();
-                    Health += weaponInfo.Value*probability;
+                    Health += weaponInfo.Value;
                     break;
                 case "Armor":
                     damage = base.Attack();
